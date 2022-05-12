@@ -14,12 +14,18 @@ public class BasicController {
      * @param model
      * @return
      */
-    @GetMapping("text-basic")
+    @GetMapping("/text-basic")
     public String textBasic(Model model) {
         model.addAttribute("data", "Hello Spring");
         return "basic/text-basic";
     }
 
+    /**
+     * 텍스트 unescaped
+     * h1, h2 같은 html 문법 적용 가능
+     * @param model
+     * @return
+     */
     @GetMapping("/text-unescaped")
     public String textUnescaped(Model model) {
         model.addAttribute("data", "Hello <b>Spring!</b>");
